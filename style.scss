@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&family=Oswald:wght@700&display=swap');
+:root{
+    --brand-grey : #4d4d4d;
+    --brand-blue: #414f6b;
+    --ff-lato: 'Lato', sans-serif;
+    --ff-bebas: 'Bebas Neue', sans-serif;
+    --ff-oswald : 'Oswald', sans-serif;
+    --fs-16 : 16px;  
+}
+body{
+    margin: 0;
+    padding: 0;
+    line-height: 1.4;
+}
+.txt-grey{
+    color: var(--brand-grey);
+}
+.txt-blue{
+    color: var(--brand-blue) !important;
+}
+.ff-oswald{
+    font-family: var(--ff-oswald);
+    font-weight: 900;
+}
+.ff-bebas{
+    font-family: var(--ff-bebas);
+}
+.ff-lato-reg{
+    font-family: var(--ff-lato);
+    font-weight: 900;
+    font-style: italic;
+}
+.ff-lato-light{
+    font-family: var(--ff-lato);
+    font-weight: 300;
+}
+.ff-lato{
+    font-family: var(--ff-lato);
+    
+}
+.number-text{
+    .number {
+        font-size: 135px;
+        color: #77859e;
+    }
+    .title-text{
+        font-size: 32px;
+        margin-left: -28px;
+        margin-top: 36px;
+        color: #414f6b;
+    }
+}
+// Global css ends
+
+// Hero section starts
+.cover-container{
+    background-image: url("./assets/images/hero-banner.jpg") ;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+// Hero section ends
+
+// sticky header starts
+.sticky-header{
+    .logo-text{
+        .brand-text{
+            font-size: 16px;
+            line-height: 1;
+        }
+    }
+    .nav-link{
+        color: var(--brand-blue);
+        text-decoration: underline;
+    }
+}
+// sticky header ends
+
+// History section starts
+.history-section{
+    .history-container{
+        background-image: url("./assets/images/history-banner.jpg") ;
+        background-position: bottom;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100vh;
+    }
+    .slider-bg{
+     background-color:rgb(65 79 107 / 95%);;   
+    }
+    .slick-slide img {
+        width: 90%;
+        margin: auto;
+    }
+    .slick-dotted{
+        &.slick-slider {
+            margin-bottom: 0px !important; 
+        }
+    }
+    .slick-dots{
+        bottom: -38px;
+       li{
+            &.slick-active{
+                button{
+                    &::before{
+                        opacity: .75;
+                        color: white;
+                    }
+                }
+            }
+        } 
+            
+    }
+    
+}
+// History section starts
+
+// climb section start
+.climb-section{
+    .schedule{
+        background: rgb(255 255 255 / 55%);
+        .schedule-text {
+            font: 32px;
+        }
+    }
+    .tab-bg{
+        background-color: #414f6b;
+        .nav-link{
+            background-color: none;
+            color: #b0b4be;
+            border: 0px;
+            border-radius: 0px;
+            &.active{
+                background-color: #b0b4be;
+                color: #414f6b;
+                text-decoration: underline;
+            }
+        }
+    }
+    .tab-img{
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: calc(100vh - 200px) ;
+        &.mountain1{
+            background-image: url("./assets/images/mountain.jpg") ;
+        }
+        &.mountain2{
+            background-image: url("./assets/images/mountain2.jpg") ;
+        } 
+    }  
+}
+// climb section ends
+.footer{
+    background: var(--brand-blue);
+    position: relative;
+    &::before{
+        background-color: #414f6bba;
+        background-size: contain;
+        content: "";
+        height: 65px;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        top: 0;
+    }
+}
+// Media Queries
+$layout-breakpoint-sm: 576px;
+$layout-breakpoint-md: 768px;
+$layout-breakpoint-lg: 992px;
+$layout-breakpoint-llg: 1024px;
+$layout-breakpoint-xl: 1200px;
+$layout-breakpoint-xxl: 1440px;
+@media (max-width: $layout-breakpoint-xxl) {
+    .history-section .history-container {
+        height: auto;
+    }
+}
+@media (max-width: $layout-breakpoint-lg) {
+    .history-section .history-container {
+        height: auto;
+    }
+    // .climb-section .tab-img {
+    //     height: calc(100 - 250px);
+    // }
+    .cover-container {
+        height: 50vh;
+    }
+}
+@media (min-width: $layout-breakpoint-xl) {
+    .climb-section .schedule{
+        width: 25%;
+    }
+}
